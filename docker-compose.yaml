@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_test
+    
+    ports: 
+      - 8081:80
+
+    volumes:
+      - ./D10:/D10
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+
+    links:
+      - php
+    depends_on:
+      - php
+    networks:
+      - mynet
+
+  php: 
+    image: php:8.1-fpm
+    build: ./
+    container_name: php_test
+    env_file:
+      - .env
+    volumes:
+      - ./D10:/D10
+    links:
+      - mysql
+    
+    depends_on:
+      - mysql
+    networks:
+      - mynet
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    env_file:
+      - .env
+    ports:
+      - 10000:3306
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    networks:
+      - mynet
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    depends_on:
+      - mysql
+    links: 
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:  
+      - 10001:80
+    networks:
+      - mynet
+
+
+volumes: 
+  mysql:
+
+networks:
+  mynet:
