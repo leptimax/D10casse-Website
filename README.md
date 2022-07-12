@@ -1,7 +1,7 @@
 # D10casse-Website
-Web site develop during my studies for one of the most wonderfull club of my ingineering school
+Web site developed during my studies for one of the most wonderfull club of my engineering school
 
-## Install
+## Install 
 
 ### Requirements
 
@@ -31,8 +31,18 @@ PMA_PORT: 3306
 PMA_ARBITRARY: 1
 ```
 
-> You can set as you want the three first lines, they determine the username and pasword for root user and a current user on MySQL database. They allow, you among other things, to access to the database from PHPMyAdmin.
+> You can set as you wish the three first lines, they determine the username and pasword for root user and a current user on MySQL database. They allow, you among other things, to access to the database from PHPMyAdmin.
 
 Build the project `docker-compose build` then start it `docker-compose up -d `.
 
-Now open http://127.0.0.1:8080 (**sans https**).
+Now open http://127.0.0.1:8080 (**sans https**) to access to the website
+
+If you want access to PHPMyAdmin, open http://127.0.0.1:10001
+
+## Install for WAMP or other stack on windows
+
+If you already have a stack configured and wish only copy file on your own servor, you will find all source files [here](https://github.com/leptimax/D10casse-Website/tree/source_files_for_windows)
+
+## Licence
+
+This project is the intellectual property of leptimax and can be used ONLY for a non commercial usage without authorization.  
