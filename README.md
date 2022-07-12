@@ -5,9 +5,27 @@ Web site develop during my studies for one of the most wonderfull club of my ing
 
 ### Requirements
 
-- Docker (follow installation guide here !)
+- Docker (follow installation guide [here](https://docs.docker.com/engine/install/) !)
 - Docker-compose (follow installation guide [here](https://docs.docker.com/compose/install/) !)
 
 ### Dependancies
 
-This website is based on HTML, PHP, Javascript, CSS and MySQL technologies. This project is totally ;containerised and managed by a docker-compose.yaml file
+This website is based on HTML, PHP, Javascript, CSS and MySQL technologies however, you don't need to install a LAMP service to run it. Everything you need is managed by the docker-compose file which install and run different services needed by the website.
+
+### D10casse deposit
+
+First of all, clone the project.
+
+Configure a local development `.env` file (`cp .env.example .env`) :
+
+```
+MYSQL_ROOT_PASSWORD=secret
+MYSQL_DATABASE=d10casse
+MYSQL_USER=current_user
+MYSQL_PASSWORD=secret
+MYSQL_HOST=mysql
+
+PMA_HOST: mysql
+PMA_PORT: 3306
+PMA_ARBITRARY: 1
+```
