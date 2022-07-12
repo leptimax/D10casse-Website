@@ -20,12 +20,19 @@ Configure a local development `.env` file (`cp .env.example .env`) :
 
 ```
 MYSQL_ROOT_PASSWORD=secret
-MYSQL_DATABASE=d10casse
 MYSQL_USER=current_user
 MYSQL_PASSWORD=secret
+
+MYSQL_DATABASE=d10casse
 MYSQL_HOST=mysql
 
 PMA_HOST: mysql
 PMA_PORT: 3306
 PMA_ARBITRARY: 1
 ```
+
+> You can set as you want the three first lines, they determine the username and pasword for root user and a current user on MySQL database. They allow, you among other things, to access to the database from PHPMyAdmin.
+
+Build the project `docker-compose build` then start it `docker-compose up -d `.
+
+Now open http://127.0.0.1:8080 (**sans https**).

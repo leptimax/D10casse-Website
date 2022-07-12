@@ -7,7 +7,7 @@ services:
     container_name: nginx_test
     
     ports: 
-      - 8081:80
+      - 8080:80
 
     volumes:
       - ./D10:/D10
