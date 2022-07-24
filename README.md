@@ -10,7 +10,7 @@ Web site developed during my studies for one of the most wonderfull club of my e
 
 ### Dependancies
 
-This website is based on HTML, PHP, Javascript, CSS and MySQL technologies however, you don't need to install a LAMP service to run it. Everything you need is managed by the docker-compose file which install and run different services needed by the website.
+This website is based on HTML, PHP, Javascript, CSS and MySQL technologies however, you don't have to install a LAMP service to run it. Everything you need is managed by the docker-compose file which install and run different services needed by the website.
 
 ### D10casse deposit
 
@@ -35,7 +35,7 @@ PMA_ARBITRARY: 1
 
 Build the project `docker-compose build` then start it `docker-compose up -d `.
 
-Now open http://127.0.0.1:8080 (**sans https**) to access to the website
+Now open http://127.0.0.1:8080 (**without https**) to access to the website
 
 If you want access to PHPMyAdmin, open http://127.0.0.1:10001
 
